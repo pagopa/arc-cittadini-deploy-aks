@@ -107,9 +107,11 @@ microservice-chart:
 
   # nodeSelector: {}
 
-  # tolerations: []
-
-  # affinity: {}
+  tolerations:
+    - key: "cittadiniOnly"
+      operator: "Equal"
+      value: "true"
+      effect: "NoSchedule"
 
   autoscaling:
     enable: false
